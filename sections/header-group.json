@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement_bar_3jhyz6": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_bFHhHp": {
+          "type": "announcement",
+          "settings": {
+            "text": "Witamy w KILIMILI POLSKA!",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_bFHhHp"
+      ],
+      "settings": {
+        "color_scheme": "scheme-92357ab7-8455-4c80-b5cb-2a27e6eedcfa",
+        "show_line_separator": false,
+        "show_social": true,
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "custom_liquid_DrYE4E": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"kilimili-marquee\">\n  <div class=\"kilimili-marquee__track\">\n\n    {% for i in (1..4) %}\n      <div class=\"kilimili-marquee__content\" {% if i > 1 %}aria-hidden=\"true\"{% endif %}>\n        <span>DARMOWA DOSTAWA</span>\n        <span class=\"dot\">•</span>\n        <span>NOWA KOLEKCJA JUŻ DOSTĘPNA</span>\n        <span class=\"dot\">•</span>\n        <span>STWORZONE DO RUCHU</span>\n        <span class=\"dot\">•</span>\n        <span>POCZUJ SIĘ PEWNIE W KAŻDYM RUCHU</span>\n        <span class=\"dot\">•</span>\n      </div>\n    {% endfor %}\n\n  </div>\n</div>\n\n<style>\n.kilimili-marquee {\n  width: 100%;\n  overflow: hidden;\n  background: #111111;\n  color: #ffffff;\n  padding: 10px 0;\n}\n\n.kilimili-marquee__track {\n  display: flex;\n  width: max-content;\n  animation: kilimili-scroll 28s linear infinite;\n  will-change: transform;\n}\n\n.kilimili-marquee__content {\n  flex-shrink: 0;\n  display: flex;\n  align-items: center;\n  gap: 34px;\n  padding-right: 34px;\n  white-space: nowrap;\n}\n\n.kilimili-marquee__content span {\n  font-size: 12px;\n  font-weight: 600;\n  letter-spacing: 1.2px;\n  line-height: 1;\n}\n\n.kilimili-marquee__content .dot {\n  font-size: 14px;\n}\n\n@keyframes kilimili-scroll {\n  from {\n    transform: translateX(0);\n  }\n\n  to {\n    transform: translateX(-25%);\n  }\n}\n\n@media screen and (max-width: 749px) {\n  .kilimili-marquee {\n    padding: 9px 0;\n  }\n\n  .kilimili-marquee__content {\n    gap: 26px;\n    padding-right: 26px;\n  }\n\n  .kilimili-marquee__content span {\n    font-size: 11px;\n    letter-spacing: 1px;\n  }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .kilimili-marquee__track {\n    animation: none;\n  }\n}\n</style>",
+        "color_scheme": "scheme-4",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "top-center",
+        "menu": "main-menu",
+        "menu_type_desktop": "drawer",
+        "sticky_header_type": "reduce-logo-size",
+        "show_line_separator": false,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-2",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_3jhyz6",
+    "custom_liquid_DrYE4E",
+    "header"
+  ]
+}

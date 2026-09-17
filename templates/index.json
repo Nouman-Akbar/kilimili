@@ -1,0 +1,229 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_9fGKCk": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_ctKxct": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/baner-kilimili-livemotion-czerwony-kombinezon-sportowy-basen-04.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_eH6GDi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/baner-kilimili-polska-szary-kombinezon-sportowy-set-the-pace-02.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_aHjGD3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/kombinezon-sportowy-kolekcja-sportowa-lato-2-2026.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_8xgYm9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/baner-kilimili-polska-kombinezony-sportowe-dwie-modelki-01.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_yLp3ek": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/baner-kilimili-polska-czerwony-kombinezon-sportowy-silownia-03.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_ctKxct",
+        "slide_eH6GDi",
+        "slide_aHjGD3",
+        "slide_8xgYm9",
+        "slide_yLp3ek"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": ""
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/kombinezon-sportowy-kolekcja-sportowa-lato-2026.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "right",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "collection_list_k8nfA8": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_w3EyTC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "kilimili-x-vivemotion"
+          }
+        },
+        "featured_collection_UXBfhG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "kombinezony-sportowe-kilimili-x-activegrace"
+          }
+        },
+        "featured_collection_4BRy7q": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "kombinezony-sportowe-kilimili-x-energyflow"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_w3EyTC",
+        "featured_collection_UXBfhG",
+        "featured_collection_4BRy7q"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Kolekcje",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Bestsellery",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_xTaGLF": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div style=\"width:100vw; margin-left:calc(-50vw + 50%); overflow:hidden; line-height:0;\">\n  <img \n    src=\"https://cdn.shopify.com/s/files/1/0859/5216/8201/files/ChatGPT_Image_27_mai_2026_19_45_17_7b391666-9d01-4838-a26e-8bcea24e1975.png?v=1788651132&format=webp\"\n    alt=\"KILIMILI Premium Activewear\"\n    style=\"\n      width:100%;\n      height:300px;\n      object-fit:cover;\n      object-position:center center;\n      display:block;\n    \"\n  >\n</div>",
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "slideshow_9fGKCk",
+    "image_banner",
+    "collection_list_k8nfA8",
+    "featured_collection",
+    "custom_liquid_xTaGLF"
+  ]
+}
