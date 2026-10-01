@@ -113,7 +113,7 @@
                         >
                           {{
                             settings.brand_image
-                            | image_url: width: 1100
+                            | image_url: width: 1100, format: 'jpg'
                             | image_tag:
                               loading: 'lazy',
                               widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
@@ -126,7 +126,7 @@
                         <h2 class="footer-block__heading rte">{{ settings.brand_headline }}</h2>
                       {%- endif -%}
                       {%- if settings.brand_description != blank -%}
-                        <div class="rte">{{ settings.brand_description }}</div>
+                        <div class="rte">{{ settings.brand_description | replace: '<img', '<img loading="lazy" decoding="async"' }}</div>
                       {%- endif -%}
                       {%- if block.settings.show_social and has_social_icons -%}
                         {%- render 'social-icons', class: 'footer__list-social' -%}
@@ -141,8 +141,8 @@
                           style="max-width: min(100%, {{ block.settings.image_width }}px);"
                         >
                           <img
-                            srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
-                            src="{{ block.settings.image | image_url: width: 760 }}"
+                            srcset="{{ block.settings.image | image_url: width: block.settings.image_width, format: 'jpg' }}, {{ block.settings.image | image_url: width: image_size_2x, format: 'jpg' }} 2x"
+                            src="{{ block.settings.image | image_url: width: 760, format: 'jpg' }}"
                             alt="{{ block.settings.image.alt | escape }}"
                             loading="lazy"
                             width="{{ block.settings.image.width }}"
