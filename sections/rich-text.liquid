@@ -51,7 +51,7 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ block.settings.text }}
+                {{ block.settings.text | replace: '<img', '<img loading="lazy" decoding="async"' }}
               </div>
             {%- when 'button' -%}
               <div
