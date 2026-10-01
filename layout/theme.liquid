@@ -7,6 +7,22 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
+    
+    <!-- # Microsft Clarity Integration Meta Tags and Script -- Start -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "yo7iwaztxc");
+    </script>
+    <!-- # Microsft Clarity Integration Meta Tags and Script -- End -->
+
+    <!-- Ahref script --start -->
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="OKHNbecFYrjJku9tnkXohw" async></script>
+    <!-- Ahref script -- end -->
+
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -31,26 +47,13 @@
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
 
-    {%- comment -%} Defer non-critical JS until after first render {%- endcomment -%}
-    <script>
-      window.addEventListener('DOMContentLoaded', function() {
-        var scripts = [
-          {{ 'details-disclosure.js' | asset_url | json }},
-          {{ 'details-modal.js' | asset_url | json }},
-          {{ 'search-form.js' | asset_url | json }}
-        ];
-        {%- if settings.animations_reveal_on_scroll -%}
-        scripts.push({{ 'animations.js' | asset_url | json }});
-        {%- endif -%}
-        scripts.forEach(function(src) {
-          var s = document.createElement('script');
-          s.src = src;
-          s.defer = true;
-          document.head.appendChild(s);
-        });
-      });
-    </script>
+    {%- if settings.animations_reveal_on_scroll -%}
+      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
     {{ content_for_header }}
 
@@ -268,25 +271,15 @@
       }
     {% endstyle %}
 
-    {%- comment -%} Preload and async-load base.css (critical CSS is inlined above) {%- endcomment -%}
-    <link rel="preload" as="style" href="{{ 'base.css' | asset_url }}" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ 'base.css' | asset_url }}"></noscript>
+    {{ 'base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}"></noscript>
 
     {%- if settings.cart_type == 'drawer' -%}
-      <link rel="stylesheet" href="{{ 'component-cart-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-      <link rel="stylesheet" href="{{ 'component-cart.css' | asset_url }}" media="print" onload="this.media='all'">
-      <link rel="stylesheet" href="{{ 'component-totals.css' | asset_url }}" media="print" onload="this.media='all'">
-      <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
-      <link rel="stylesheet" href="{{ 'component-discounts.css' | asset_url }}" media="print" onload="this.media='all'">
-      <noscript>
-        <link rel="stylesheet" href="{{ 'component-cart-drawer.css' | asset_url }}">
-        <link rel="stylesheet" href="{{ 'component-cart.css' | asset_url }}">
-        <link rel="stylesheet" href="{{ 'component-totals.css' | asset_url }}">
-        <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}">
-        <link rel="stylesheet" href="{{ 'component-discounts.css' | asset_url }}">
-      </noscript>
+      {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+      {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+      {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+      {{ 'component-price.css' | asset_url | stylesheet_tag }}
+      {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
     {%- unless settings.type_body_font.system? -%}
@@ -301,16 +294,8 @@
     {%- endunless -%}
 
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
-      <link rel="stylesheet" href="{{ 'component-localization-form.css' | asset_url }}" media="print" onload="this.media='all'">
-      <noscript><link rel="stylesheet" href="{{ 'component-localization-form.css' | asset_url }}"></noscript>
-      <script>
-        window.addEventListener('DOMContentLoaded', function () {
-          var s = document.createElement('script');
-          s.src = {{ 'localization-form.js' | asset_url | json }};
-          s.defer = true;
-          document.head.appendChild(s);
-        });
-      </script>
+      {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
+      <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
     {%- if settings.predictive_search_enabled -%}
@@ -396,41 +381,31 @@
       };
     </script>
 
-    {%- comment -%} Lucia SDK: lazy-loaded after window load to avoid blocking initial render {%- endcomment -%}
+    <script
+      src="https://cdn.luciaprotocol.com/lucia-sdk-latest.min.js"
+      data-api-key="0dab0799-749aec4b-8f4f331c-c262fc4c-92551576-905815cc-2b88e244-469099e5"
+      data-auto-track-clicks="true"
+      defer="defer"
+    >
+    </script>
+
     <script>
-      window.addEventListener('load', function () {
-        var s = document.createElement('script');
-        s.src = 'https://cdn.luciaprotocol.com/lucia-sdk-latest.min.js';
-        s.setAttribute('data-api-key', '0dab0799-749aec4b-8f4f331c-c262fc4c-92551576-905815cc-2b88e244-469099e5');
-        s.setAttribute('data-auto-track-clicks', 'true');
-        s.defer = true;
-        s.onload = function () {
-          if (window.LuciaSDK) {
-            window.LuciaSDK.pageView('{{ template | replace: '.', '-' }}');
-          }
-        };
-        document.body.appendChild(s);
+      window.addEventListener("load", function () {
+        if (window.LuciaSDK) {
+          window.LuciaSDK.pageView(
+            "{{ template | replace: '.', '-' }}"
+          );
+        }
       });
     </script>
 
-    {%- comment -%} Defer non-critical JS until after window load {%- endcomment -%}
-    <script>
-      window.addEventListener('load', function () {
-        var scripts = [];
-        {%- if settings.predictive_search_enabled -%}
-        scripts.push({{ 'predictive-search.js' | asset_url | json }});
-        {%- endif -%}
-        {%- if settings.cart_type == 'drawer' -%}
-        scripts.push({{ 'cart-drawer.js' | asset_url | json }});
-        {%- endif -%}
-        scripts.forEach(function (src) {
-          var s = document.createElement('script');
-          s.src = src;
-          s.defer = true;
-          document.body.appendChild(s);
-        });
-      });
-    </script>
+    {%- if settings.predictive_search_enabled -%}
+      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {%- if settings.cart_type == 'drawer' -%}
+      <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
     {% render 'kilimili-popup' %}
 
