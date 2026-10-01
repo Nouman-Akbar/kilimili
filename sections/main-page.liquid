@@ -19,7 +19,7 @@
     {{ page.title | escape }}
   </h1>
   <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
+    {{ page.content | replace: '<img', '<img loading="lazy" decoding="async"' }}
   </div>
 </div>
 
