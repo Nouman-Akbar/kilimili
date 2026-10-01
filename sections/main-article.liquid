@@ -21,16 +21,16 @@
             >
               <img
                 srcset="
-                  {% if article.image.width >= 350 %}{{ article.image | image_url: format: 'webp', width: 350 }} 350w,{% endif %}
-                  {% if article.image.width >= 750 %}{{ article.image | image_url: format: 'webp', width: 750 }} 750w,{% endif %}
-                  {% if article.image.width >= 1100 %}{{ article.image | image_url: format: 'webp', width: 1100 }} 1100w,{% endif %}
-                  {% if article.image.width >= 1500 %}{{ article.image | image_url: format: 'webp', width: 1500 }} 1500w,{% endif %}
-                  {% if article.image.width >= 2200 %}{{ article.image | image_url: format: 'webp', width: 2200 }} 2200w,{% endif %}
-                  {% if article.image.width >= 3000 %}{{ article.image | image_url: format: 'webp', width: 3000 }} 3000w,{% endif %}
-                  {{ article.image | image_url: format: 'webp' }} {{ article.image.width }}w
+                  {% if article.image.width >= 350 %}{{ article.image | image_url: format: 'jpg', width: 350 }} 350w,{% endif %}
+                  {% if article.image.width >= 750 %}{{ article.image | image_url: format: 'jpg', width: 750 }} 750w,{% endif %}
+                  {% if article.image.width >= 1100 %}{{ article.image | image_url: format: 'jpg', width: 1100 }} 1100w,{% endif %}
+                  {% if article.image.width >= 1500 %}{{ article.image | image_url: format: 'jpg', width: 1500 }} 1500w,{% endif %}
+                  {% if article.image.width >= 2200 %}{{ article.image | image_url: format: 'jpg', width: 2200 }} 2200w,{% endif %}
+                  {% if article.image.width >= 3000 %}{{ article.image | image_url: format: 'jpg', width: 3000 }} 3000w,{% endif %}
+                  {{ article.image | image_url: format: 'jpg' }} {{ article.image.width }}w
                 "
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
-                src="{{ article.image | image_url: format: 'webp', width: 1100 }}"
+                src="{{ article.image | image_url: format: 'jpg', width: 1100 }}"
                 loading="eager"
                 fetchpriority="high"
                 width="{{ article.image.width }}"
@@ -68,7 +68,7 @@
           class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {{ block.shopify_attributes }}
         >
-          {{ article.content }}
+          {{ article.content | replace: '<img', '<img loading="lazy" decoding="async"' }}
         </div>
 
       {%- when 'share' -%}
