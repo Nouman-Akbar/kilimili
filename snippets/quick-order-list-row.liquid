@@ -27,7 +27,7 @@
             {%- assign img_height = 43 | divided_by: image.aspect_ratio | ceil -%}
             {{
               image
-              | image_url: format: 'webp', width: 86
+              | image_url: format: 'jpg', width: 86
               | image_tag:
                 loading: 'lazy',
                 fetchpriority: 'low',
