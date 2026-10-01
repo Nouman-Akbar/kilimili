@@ -66,7 +66,7 @@
 
       {% if form.posted_successfully? %}
         {% if settings.logo != blank %}
-          <img class="logo" alt="{{ shop.name }}" src="{{ settings.logo | image_url: width: 300 }}">
+          <img class="logo" alt="{{ shop.name }}" src="{{ settings.logo | image_url: width: 300 }}" width="150" height="{{ 150 | divided_by: settings.logo.aspect_ratio | round }}" loading="lazy" decoding="async">
         {% endif %}
         <h2 class="headline">Gotowe!</h2>
         <p class="sub">Kod rabatowy czeka już w Twojej skrzynce.</p>
@@ -78,7 +78,7 @@
         </script>
       {% else %}
         {% if settings.logo != blank %}
-          <img class="logo" alt="{{ shop.name }}" src="{{ settings.logo | image_url: width: 300 }}">
+          <img class="logo" alt="{{ shop.name }}" src="{{ settings.logo | image_url: width: 300 }}" width="150" height="{{ 150 | divided_by: settings.logo.aspect_ratio | round }}" loading="lazy" decoding="async">
         {% endif %}
         <h2 class="headline">Odbierz 15% zniżki na swoje pierwsze zakupy</h2>
         <p class="sub">Włącz subskrypcję, aby otrzymać 15% zniżki na pierwsze zamówienie oraz ekskluzywny dostęp do naszych najlepszych promocji.</p>
