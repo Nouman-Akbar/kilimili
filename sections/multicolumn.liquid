@@ -109,7 +109,7 @@
                     {% endcapture %}
                     {{
                       block.settings.image
-                      | image_url: width: 3200, format: 'webp'
+                      | image_url: width: 3200, format: 'jpg'
                       | image_tag:
                         widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
                         sizes: sizes,
@@ -123,7 +123,7 @@
                   <h3 class="inline-richtext">{{ block.settings.title }}</h3>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
-                  <div class="rte">{{ block.settings.text }}</div>
+                  <div class="rte">{{ block.settings.text | replace: '<img', '<img loading="lazy" decoding="async"' }}</div>
                 {%- endif -%}
                 {%- if block.settings.link_label != blank -%}
                   <a
