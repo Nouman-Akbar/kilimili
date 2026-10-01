@@ -46,7 +46,8 @@
         {%- render 'icon-accordion', icon: block.settings.icon_1 -%}
       {%- else -%}
         <img
-          src="{{ block.settings.image_1 | image_url }}"
+          srcset="{{ block.settings.image_1 | image_url: width: 100 }}, {{ block.settings.image_1 | image_url: width: 200 }} 2x"
+          src="{{ block.settings.image_1 | image_url: width: 100 }}"
           {% if block.settings.image_1.alt != blank %}
             alt="{{ block.settings.image_1.alt | escape }}"
           {% else %}
@@ -68,7 +69,8 @@
         {% render 'icon-accordion', icon: block.settings.icon_2 -%}
       {%- else -%}
         <img
-          src="{{ block.settings.image_2 | image_url }}"
+          srcset="{{ block.settings.image_2 | image_url: width: 100 }}, {{ block.settings.image_2 | image_url: width: 200 }} 2x"
+          src="{{ block.settings.image_2 | image_url: width: 100 }}"
           {% if block.settings.image_2.alt != blank %}
             alt="{{ block.settings.image_2.alt | escape }}"
           {% else %}
@@ -90,7 +92,8 @@
         {% render 'icon-accordion', icon: block.settings.icon_3 -%}
       {%- else -%}
         <img
-          src="{{ block.settings.image_3 | image_url }}"
+          srcset="{{ block.settings.image_3 | image_url: width: 100 }}, {{ block.settings.image_3 | image_url: width: 200 }} 2x"
+          src="{{ block.settings.image_3 | image_url: width: 100 }}"
           {% if block.settings.image_3.alt != blank %}
             alt="{{ block.settings.image_3.alt | escape }}"
           {% else %}
