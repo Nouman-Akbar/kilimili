@@ -78,9 +78,9 @@
       -%}
         <div class="collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {%- if section.settings.show_description -%}
-            {{ section.settings.collection.description }}
+            {{ section.settings.collection.description | replace: '<img', '<img loading="lazy" decoding="async"' }}
           {%- else -%}
-            {{ section.settings.description -}}
+            {{ section.settings.description | replace: '<img', '<img loading="lazy" decoding="async"' -}}
           {%- endif %}
         </div>
       {%- endif -%}
