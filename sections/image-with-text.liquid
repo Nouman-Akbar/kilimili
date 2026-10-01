@@ -51,7 +51,7 @@
               {%- endif -%}
               {{
                 section.settings.image
-                | image_url: width: 1500, format: 'webp'
+                | image_url: width: 1500, format: 'jpg'
                 | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
               }}
             {%- else -%}
