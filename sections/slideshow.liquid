@@ -139,13 +139,13 @@
             {%- if forloop.first %}
               {{
                 block.settings.image
-                | image_url: width: 3840, format: 'webp'
+                | image_url: width: 3840, format: 'jpg'
                 | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority
               }}
             {%- else -%}
               {{
                 block.settings.image
-                | image_url: width: 3840, format: 'webp'
+                | image_url: width: 3840, format: 'jpg'
                 | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths
               }}
             {%- endif -%}
