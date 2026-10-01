@@ -194,7 +194,7 @@
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                    {{ product.description }}
+                    {{ product.description | replace: '<img', '<img loading="lazy" decoding="async"' }}
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}
@@ -222,8 +222,8 @@
                       {{- 'icon-caret.svg' | inline_asset_content -}}
                     </summary>
                     <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                      {{ block.settings.content }}
-                      {{ block.settings.page.content }}
+                      {{ block.settings.content | replace: '<img', '<img loading="lazy" decoding="async"' }}
+                      {{ block.settings.page.content | replace: '<img', '<img loading="lazy" decoding="async"' }}
                     </div>
                   </details>
                 </div>
@@ -692,7 +692,7 @@
           </button>
           <div class="product-popup-modal__content-info">
             <h1 class="h2">{{ block.settings.page.title | escape }}</h1>
-            {{ block.settings.page.content }}
+            {{ block.settings.page.content | replace: '<img', '<img loading="lazy" decoding="async"' }}
           </div>
         </div>
       </modal-dialog>
