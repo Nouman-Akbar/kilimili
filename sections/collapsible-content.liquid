@@ -93,8 +93,8 @@
                     role="region"
                     aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
                   >
-                    {{ block.settings.row_content }}
-                    {{ block.settings.page.content }}
+                    {{ block.settings.row_content | replace: '<img', '<img loading="lazy" decoding="async"' }}
+                    {{ block.settings.page.content | replace: '<img', '<img loading="lazy" decoding="async"' }}
                   </div>
                 </details>
               </div>
