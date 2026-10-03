@@ -37,7 +37,8 @@
         "size_chart": {
           "type": "size_chart",
           "settings": {
-            "text": "Tabela rozmiarów"
+            "text": "Tabela rozmiarów",
+            "option_name": "Size, Rozmiar"
           }
         },
         "quantity_selector": {

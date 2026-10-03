@@ -5,10 +5,38 @@
   - product: {Object} product object.
   - block: {Object} passing the block information.
   - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - size_chart_block: {Object} Optional size_chart block. When set, its link is rendered at the
+    right end of the matching option's label row instead of as a standalone block.
   Usage:
-  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id, size_chart_block: size_chart_block %}
 {% endcomment %}
 {%- unless product.has_only_default_variant -%}
+  {%- liquid
+    assign size_chart_images = product.metafields.custom.size_chart_images.value
+    assign show_size_chart = false
+    if size_chart_block and size_chart_images.size > 0
+      assign show_size_chart = true
+      assign size_chart_names = size_chart_block.settings.option_name | default: 'Size' | downcase | split: ','
+    endif
+  -%}
+  {%- if show_size_chart -%}
+    {%- capture size_chart_opener -%}
+      <modal-opener
+        class="product-popup-modal__opener product-form__size-chart quick-add-hidden"
+        data-modal="#SizeChartModal-{{ size_chart_block.id }}"
+        {{ size_chart_block.shopify_attributes }}
+      >
+        <button
+          id="SizeChartPopup-{{ size_chart_block.id }}"
+          class="product-popup-modal__button link"
+          type="button"
+          aria-haspopup="dialog"
+        >
+          {{ size_chart_block.settings.text | escape }}
+        </button>
+      </modal-opener>
+    {%- endcapture -%}
+  {%- endif -%}
   <variant-selects
     id="variant-selects-{{ section.id }}"
     data-section="{{ section.id }}"
@@ -26,14 +54,37 @@
             assign picker_type = 'swatch'
           endif
         endif
+
+        assign is_size_chart_option = false
+        if show_size_chart and size_chart_rendered != true
+          assign option_name_downcase = option.name | downcase
+          for size_chart_name in size_chart_names
+            assign size_chart_name_trimmed = size_chart_name | strip
+            if size_chart_name_trimmed != blank and option_name_downcase contains size_chart_name_trimmed
+              assign is_size_chart_option = true
+              assign size_chart_rendered = true
+              break
+            endif
+          endfor
+        endif
       -%}
       {%- if picker_type == 'swatch' -%}
         <fieldset class="js product-form__input product-form__input--swatch">
-          <legend class="form__label">
-            {{ option.name }}:
-            <span data-selected-value>
-              {{- option.selected_value -}}
-            </span>
+          <legend class="form__label{% if is_size_chart_option %} form__label--size-chart{% endif %}">
+            {%- if is_size_chart_option -%}
+              <span>
+                {{ option.name }}:
+                <span data-selected-value>
+                  {{- option.selected_value -}}
+                </span>
+              </span>
+              {{- size_chart_opener -}}
+            {%- else -%}
+              {{ option.name }}:
+              <span data-selected-value>
+                {{- option.selected_value -}}
+              </span>
+            {%- endif -%}
           </legend>
           {% render 'product-variant-options',
             product: product,
@@ -44,7 +95,14 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}</legend>
+          <legend class="form__label{% if is_size_chart_option %} form__label--size-chart{% endif %}">
+            {%- if is_size_chart_option -%}
+              <span>{{ option.name }}</span>
+              {{- size_chart_opener -}}
+            {%- else -%}
+              {{ option.name }}
+            {%- endif -%}
+          </legend>
           {% render 'product-variant-options',
             product: product,
             option: option,
@@ -54,9 +112,18 @@
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
+          {%- if is_size_chart_option -%}
+            <div class="form__label form__label--size-chart">
+              <label for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                {{ option.name }}
+              </label>
+              {{- size_chart_opener -}}
+            </div>
+          {%- else -%}
+            <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+              {{ option.name }}
+            </label>
+          {%- endif -%}
           <div class="select">
             {%- if picker_type == 'swatch_dropdown' -%}
               <span

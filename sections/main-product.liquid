@@ -85,6 +85,28 @@
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
+          {%- liquid
+            assign size_chart_block = section.blocks | where: 'type', 'size_chart' | first
+            assign size_chart_images = product.metafields.custom.size_chart_images.value
+            assign size_chart_in_picker = false
+            if size_chart_block and size_chart_images.size > 0 and product.has_only_default_variant == false
+              assign size_chart_names = size_chart_block.settings.option_name | default: 'Size' | downcase | split: ','
+              for option in product.options_with_values
+                assign option_name_downcase = option.name | downcase
+                for size_chart_name in size_chart_names
+                  assign size_chart_name_trimmed = size_chart_name | strip
+                  if size_chart_name_trimmed != blank and option_name_downcase contains size_chart_name_trimmed
+                    assign size_chart_in_picker = true
+                    break
+                  endif
+                endfor
+                if size_chart_in_picker
+                  break
+                endif
+              endfor
+            endif
+          -%}
+
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
@@ -456,10 +478,7 @@
                   </button>
                 </modal-opener>
               {%- when 'size_chart' -%}
-                {%- liquid
-                  assign size_chart_images = product.metafields.custom.size_chart_images.value
-                -%}
-                {%- if size_chart_images.size > 0 -%}
+                {%- if size_chart_in_picker == false and size_chart_images.size > 0 -%}
                   <modal-opener
                     class="product-popup-modal__opener quick-add-hidden"
                     data-modal="#SizeChartModal-{{ block.id }}"
@@ -482,7 +501,7 @@
                 %}
 
               {%- when 'variant_picker' -%}
-                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id, size_chart_block: size_chart_block %}
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -741,7 +760,6 @@
               {{- 'icon-close.svg' | inline_asset_content -}}
             </button>
             <div class="product-popup-modal__content-info">
-              <h1 class="h2">{{ block.settings.text | escape }}</h1>
               <div class="size-chart-modal__images">
                 {%- for chart in size_chart_images -%}
                     <img
@@ -1256,6 +1274,13 @@
           "id": "text",
           "default": "Size chart",
           "label": "Link label"
+        },
+        {
+          "type": "text",
+          "id": "option_name",
+          "default": "Size",
+          "label": "Option name",
+          "info": "Attach the link to the label row of this option. Accepts a comma-separated list, e.g. \"Size, Rozmiar\"."
         }
       ]
     },

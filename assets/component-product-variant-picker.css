@@ -26,6 +26,25 @@ variant-selects {
   margin-bottom: 0.2rem;
 }
 
+.form__label--size-chart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1.5rem;
+  width: 100%;
+}
+
+.form__label--size-chart .product-popup-modal__opener {
+  flex-shrink: 0;
+}
+
+.form__label--size-chart .product-popup-modal__button {
+  padding-right: 0;
+  min-height: 0;
+  font-size: inherit;
+  white-space: nowrap;
+}
+
 .product-form__input input[type='radio'] {
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
