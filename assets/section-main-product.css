@@ -806,6 +806,25 @@ a.product__text {
       rgba(var(--color-shadow), var(--popup-shadow-opacity));
 }
 
+.size-chart-modal__images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.size-chart-modal__images img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 750px) {
+  .size-chart-modal__images {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: start;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .product-popup-modal__content {
     padding-right: 1.5rem;
