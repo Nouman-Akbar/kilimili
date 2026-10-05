@@ -3671,3 +3671,16 @@ details-disclosure > details {
     padding: 8px;
   }
 }
+.table-scroll table {
+    white-space: pre-line;
+    min-width: max-content;
+    text-wrap: balance;
+}
+
+.table-scroll table th, .table-scroll table td {
+    width: max-content;
+    line-height: 1.2;
+    padding: 10px;
+    text-wrap: balance;
+    white-space: break-spaces;
+}
