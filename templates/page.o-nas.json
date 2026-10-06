@@ -1,14 +1,335 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "hero": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_XRa7wX": {
+          "type": "text",
+          "settings": {
+            "text": "&nbsp;Kilimili to marka, która robi jedną rzecz i robi ją dobrze: kombinezony sportowe damskie. Bez rozpraszania się na dziesiątki kategorii – wszystko, co u nas znajdziesz, to jeden kawałek materiału, który ma nie zawodzić od rozgrzewki po ostatnie powtórzenie.&nbsp;",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text_XRa7wX"
+      ],
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "image": "shopify://shop_images/Main_banner_v1.jpg",
+        "image_2": "shopify://shop_images/Main_banner_v3.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "history": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Jak zaczęło się Kilimili",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sport jest ze mną od zawsze. Dziesięć lat boksu, muay thai i inne sporty walki, kilka lat tańca, około dziesięciu lat treningów na siłowni, półmaratony i maratony. Przez te wszystkie lata przetestowałam na sobie tysiące ubrań sportowych.</p><p>I szczerze? Te, które mi nie przeszkadzały, mogłabym policzyć na palcach jednej ręki. Topy, które podjeżdżają przy każdym wyproście. Ramiączka, które spadają w połowie serii. Legginsy, które trzeba poprawiać po każdym przysiadzie. Materiały, które kleją się do skóry po pięciu minutach.</p><p>Pierwszy kombinezon sportowy był dla mnie zaskoczeniem. Nic nie podjeżdżało, nic nie spadało, nic nie trzeba było poprawiać. Po kilku tygodniach moja szafa treningowa składała się już prawie wyłącznie z kombinezonów. Wtedy zobaczyłam też drugi problem: dobrych kombinezonów jest na rynku bardzo mało. Tak powstało Kilimili.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Za_o_ycielka_lub_kadr_z_treningu.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "why_jumpsuits": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Dlaczego tylko kombinezony sportowe",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Marek z odzieżą sportową są w Polsce dziesiątki. Część z nich ma w ofercie jeden albo dwa kombinezony – zwykle gdzieś na końcu katalogu, obok legginsów i topów.</p><p>U nas jest odwrotnie. Kombinezon to nie dodatek do kolekcji, tylko cała kolekcja. Dzięki temu możemy dopracować to, co w tym jednym produkcie naprawdę ma znaczenie: krój pleców, długość nogawki, szerokość ramiączek, gramaturę materiału i to, jak wszystko zachowuje się w ruchu.</p><p>Dlatego zamiast dwóch modeli znajdziesz u nas kilkadziesiąt: krótkie i długie, bezszwowe i kompresyjne, gładkie i wzorzyste, na lato i na chłodne dni.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "material": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Materiał, o którym zapominasz",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Najczęstsza reakcja naszych klientek po pierwszym treningu brzmi: \"w ogóle go nie czułam\". I o to chodzi.</p><p>Nasze kombinezony dopasowują się jak druga skóra, ale nie ściskają i nie ograniczają ruchu – materiał pracuje razem z ciałem, a nie przeciwko niemu. Nie klei się do skóry, odprowadza wilgoć i reaguje na temperaturę: grzeje, kiedy jest chłodno, i pozostaje przewiewny, kiedy jest gorąco.</p><p>Do tego rzeczy, o których zwykle nikt nie pisze, a które czuć na treningu: brak szwów, które obcierają, materiał, który nie prześwituje w przysiadzie, wysokiej jakości dzianiny i barwniki bezpieczne dla skóry.</p><p>Nawet najbardziej kobiece, wycięte modele projektowane są jak prawdziwa odzież sportowa. Możesz się schylić, rozciągnąć i wykonać każdy ruch bez zastanawiania się, czy wszystko jest na swoim miejscu.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Zbli_enie_na_materia_i_szwy.png",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/ActiveGrace_o-nas.jpg",
+            "title": "<strong>ActiveGrace</strong>",
+            "text": "<p>Połącz tekst z obrazem, aby skierować uwagę na wybrany produkt, kolekcję lub wpis na blogu. Dodaj szczegóły dotyczące dostępności, stylu lub dołącz recenzję.</p>",
+            "link_label": "Shop Now",
+            "link": "shopify://collections/kombinezony-sportowe-kilimili-x-activegrace"
+          }
+        },
+        "column_2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/EnergyFlow_o-nas.jpg",
+            "title": "<strong>EnergyFlow</strong>",
+            "text": "<p>linia kompresyjna i wzorzysta. Mocniejsze podtrzymanie sylwetki i odważniejsze wzory. Na siłownię, fitness i treningi na świeżym powietrzu.</p>",
+            "link_label": "Show More",
+            "link": "shopify://collections/kombinezony-sportowe-kilimili-x-energyflow"
+          }
+        },
+        "column_3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/ViveMotion_O-nas.png",
+            "title": "<strong>ViveMotion</strong>",
+            "text": "<p>gładkie materiały i efekt drugiej skóry, od letnich krótkich modeli po termoaktywne kombinezony na chłodne dni.</p>",
+            "link_label": "Shop now",
+            "link": "shopify://collections/kilimili-x-vivemotion"
+          }
+        }
+      },
+      "block_order": [
+        "column_1",
+        "column_2",
+        "column_3"
+      ],
+      "custom_css": [
+        "h2 {text-align: center; width: 100%;}"
+      ],
+      "settings": {
+        "title": "&nbsp;Trzy linie, jeden pomysł&nbsp;",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-3",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "target_audience": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Dla kogo są nasze kombinezony",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dla każdej kobiety, która się rusza – niezależnie od poziomu.</p><p>Jedne klientki trenują zawodowo i szukają stroju, który wytrzyma sześć treningów w tygodniu. Inne chcą po prostu wygodnie wyjść na spacer z psem, poćwiczyć w domu albo iść na kawę zaraz po jodze i nie przebierać się po drodze.</p><p>Ten sam kombinezon, pięć kolorów, pięć różnych dni, pięć zupełnie różnych okazji. To dla nas najlepszy test dobrego produktu.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "shopping": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Zakupy bez niespodzianek",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Jesteśmy na rynku od dwóch lat i przez ten czas nauczyłyśmy się jednej rzeczy: klientki nie chcą obietnic, tylko konkretów.</p><ol><li><strong>Wysyłka z Polski.</strong> Zamówienia pakujemy i wysyłamy z Polski, bez czekania tygodniami na paczkę zza granicy.</li><li><strong>Zwroty do Polski.</strong> Jeśli rozmiar nie zagra, odsyłasz przesyłkę na adres w Polsce – nie do innego kraju.</li><li><strong>Obsługa po polsku, przez człowieka.</strong> Na wiadomości odpowiada realna osoba, a nie automat ani tłumaczenie maszynowe. Założycielka i duża część zespołu to Polki.</li><li><strong>Pomoc w doborze rozmiaru.</strong> Nie wiesz, który model wybrać? Napisz – podpowiemy, zanim złożysz zamówienie.</li></ol>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Packaging.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "cta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Zobacz kombinezony sportowe",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kilkadziesiąt modeli, jeden pomysł: ubranie, o którym zapominasz w pierwszych minutach treningu.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Przejdź do kolekcji",
+            "button_link": "shopify://collections/kombinezony-sportowe",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
-    "main"
+    "hero",
+    "history",
+    "why_jumpsuits",
+    "material",
+    "multicolumn",
+    "target_audience",
+    "shopping",
+    "cta"
   ]
 }
