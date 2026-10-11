@@ -47,6 +47,18 @@
   title="{{ value }}"
   class="swatch-input__label{% if shape == 'square' %} swatch-input__label--square{% endif %}"
 >
-  {% render 'swatch', swatch: swatch, shape: shape %}
+  {%- if swatch.src -%}
+    {%- liquid
+      assign image_url = swatch | image_url: format: 'webp', width: 200
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+      assign swatch_focal_point = swatch.presentation.focal_point
+    -%}
+    <span
+      class="swatch{% if shape == 'square' %} swatch--square{% endif %}"
+      style="--swatch--background: {{ swatch_value }};{% if swatch_focal_point %} --swatch-focal-point: {{ swatch_focal_point }};{% endif %}"
+    ></span>
+  {%- else -%}
+    {% render 'swatch', swatch: swatch, shape: shape %}
+  {%- endif -%}
   {{ help_text }}
 </label>

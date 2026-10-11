@@ -46,8 +46,26 @@
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
         assign picker_type = block.settings.picker_type
+        assign has_variant_images = false
 
-        if swatch_count > 0 and block.settings.swatch_shape != 'none'
+        if option.name == 'Kolor'
+          for variant in product.variants
+            if variant.featured_image
+              assign has_variant_images = true
+              break
+            endif
+          endfor
+        endif
+
+        assign should_show_swatches = false
+        if swatch_count > 0
+          assign should_show_swatches = true
+        endif
+        if has_variant_images
+          assign should_show_swatches = true
+        endif
+
+        if should_show_swatches and block.settings.swatch_shape != 'none'
           if block.settings.picker_type == 'dropdown'
             assign picker_type = 'swatch_dropdown'
           else
