@@ -11,7 +11,7 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "blocks": {
+      "blocks": {  
         "vendor": {
           "type": "text",
           "settings": {
@@ -52,9 +52,40 @@
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
+        "tab_description": {
+          "type": "tab",
+          "settings": {
+            "heading": "Opis",
+            "content": "{{ product.description }}"
+          }
+        },
+        "tab_size_fit": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rozmiar i dopasowanie",
+            "content": "{{ product.metafields.custom.size_fit | metafield_tag }}"
+          }
+        },
+        "tab_specifications": {
+          "type": "tab",
+          "settings": {
+            "heading": "Specyfikacja",
+            "content": "{{ product.metafields.custom.specifications | metafield_tag }}"
+          }
+        },
+        "tab_faq": {
+          "type": "tab",
+          "settings": {
+            "heading": "Najczęściej zadawane pytania",
+            "faq_metafield": "custom.faqs"
+          }
+        },
+        "tab_care": {
+          "type": "tab",
+          "settings": {
+            "heading": "Pranie i pielęgnacja",
+            "content": "{{ product.metafields.custom.washing_and_care | metafield_tag }}"
+          }
         },
         "share": {
           "type": "share",
@@ -75,7 +106,11 @@
         "size_chart",
         "quantity_selector",
         "buy_buttons",
-        "description",
+        "tab_description",
+        "tab_size_fit",
+        "tab_specifications",
+        "tab_faq",
+        "tab_care",
         "share",
         "judge_me_reviews_preview_badge_94FnyF"
       ],
