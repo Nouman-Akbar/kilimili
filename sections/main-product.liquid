@@ -709,6 +709,11 @@
       </div>
     </div>
 
+    {%- assign tab_blocks = section.blocks | where: 'type', 'tab' -%}
+    {%- if tab_blocks.size > 0 -%}
+      {% render 'product-tabs', section: section %}
+    {%- endif -%}
+
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
@@ -1244,6 +1249,35 @@
           "type": "page",
           "id": "page",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        }
+      ]
+    },
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Tab"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "info": "Can be connected to a product metafield using the dynamic source button."
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        },
+        {
+          "type": "text",
+          "id": "faq_metafield",
+          "label": "FAQ metafield",
+          "info": "Optional. Key of a metafield containing a list of FAQ metaobjects with 'question' and 'answer' fields (e.g. custom.faqs). Renders an accordion instead of the content above."
         }
       ]
     },
