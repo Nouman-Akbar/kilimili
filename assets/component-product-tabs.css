@@ -1,0 +1,82 @@
+.product-tabs {
+  display: block;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.product-tabs__list {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-tabs__list::-webkit-scrollbar {
+  display: none;
+}
+
+.product-tabs__tab {
+  flex-shrink: 0;
+  padding: 1.2rem 1.6rem;
+  margin-bottom: -0.1rem;
+  border: none;
+  border-bottom: 0.2rem solid transparent;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: rgba(var(--color-foreground), 0.6);
+  white-space: nowrap;
+  transition: color 100ms ease, border-color 100ms ease;
+}
+
+.product-tabs__tab:hover {
+  color: rgb(var(--color-foreground));
+}
+
+.product-tabs__tab[aria-selected='true'] {
+  color: rgb(var(--color-foreground));
+  border-bottom-color: rgb(var(--color-foreground));
+}
+
+.product-tabs__panel {
+  padding-top: 2rem;
+}
+
+.product-tabs__panel[hidden] {
+  display: none;
+}
+
+.product-tabs__panel .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.product-tabs__panel table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.product-tabs__panel th,
+.product-tabs__panel td {
+  border: 0.1rem solid rgba(var(--color-foreground), 0.15);
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-tabs__panel th {
+  font-weight: 600;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+@media screen and (max-width: 749px) {
+  .product-tabs__tab {
+    padding: 1rem 1.2rem;
+    font-size: 1.4rem;
+  }
+}
